@@ -1,5 +1,5 @@
-# UUID          Group Name
-False 	Non-Interactive Users
-c7f4a194d687b3219869ef7448b281dadbeef762       	openstack/wsme-distgit-core
-c31c73fc8379128f65a92c156d4dc756ac227ce9        	openstack/wsme-distgit-ptl
-global:Registered-Users		Registered Users
+# UUID                                  	Group Name
+#
+c31c73fc8379128f65a92c156d4dc756ac227ce9	openstack/wsme-distgit-ptl
+c7f4a194d687b3219869ef7448b281dadbeef762	openstack/wsme-distgit-core
+global:Registered-Users                 	Registered Users
