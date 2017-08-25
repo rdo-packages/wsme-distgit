@@ -13,13 +13,13 @@
 %global lpypi_name wsme
 
 Name:           python-%{lpypi_name}
-Version:        XXX
-Release:        XXX
+Version:        0.9.2
+Release:        1%{?dist}
 Summary:        Web Services Made Easy
 
 License:        MIT
 URL:            https://pypi.python.org/pypi/WSME
-Source0:        http://pypi.python.org/packages/source/W/%{pypi_name}/%{pypi_name}-%{version}.tar.gz
+Source0:        http://tarballs.openstack.org/wsme/%{pypi_name}-%{version}.tar.gz
 BuildArch:      noarch
 
 %description
@@ -121,3 +121,6 @@ manipulate the request and the response objects.
 %endif
 
 %changelog
+* Fri Aug 25 2017 Alfredo Moralejo <amoralej@redhat.com> 0.9.2-1
+- Update to 0.9.2
+
