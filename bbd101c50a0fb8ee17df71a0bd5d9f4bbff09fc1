@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aaa499b_60e298a1",
+        "filename": "python-wsme.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2018-02-16T13:31:18Z",
+      "side": 1,
+      "message": "Missing python-webtest BR?",
+      "revId": "bbd101c50a0fb8ee17df71a0bd5d9f4bbff09fc1",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
