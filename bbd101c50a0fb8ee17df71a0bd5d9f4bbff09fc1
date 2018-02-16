@@ -16,6 +16,24 @@
       "revId": "bbd101c50a0fb8ee17df71a0bd5d9f4bbff09fc1",
       "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aaa499b_7b036db9",
+        "filename": "python-wsme.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 403
+      },
+      "writtenOn": "2018-02-16T15:19:18Z",
+      "side": 1,
+      "message": "hmm it\u0027s needed, adding.",
+      "parentUuid": "7aaa499b_60e298a1",
+      "revId": "bbd101c50a0fb8ee17df71a0bd5d9f4bbff09fc1",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
     }
   ]
 }
