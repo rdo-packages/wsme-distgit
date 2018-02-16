@@ -33,19 +33,20 @@ Summary:        Web Services Made Easy
 %{?python_provide:%python_provide python2-%{lpypi_name}}
 
 BuildRequires:  python2-devel
-BuildRequires:  python-setuptools
-BuildRequires:  python-pbr
-BuildRequires:  python-six
+BuildRequires:  python2-setuptools
+BuildRequires:  python2-pbr
+BuildRequires:  python2-six
 BuildRequires:  python-webob
-BuildRequires:  python-netaddr
-BuildRequires:  pytz
+BuildRequires:  python2-netaddr
+BuildRequires:  python2-pytz
+BuildRequires:  python-webtest
 BuildRequires:  python-simplegeneric
 
 Requires:       python-simplegeneric
-Requires:       python-six
+Requires:       python2-six
 Requires:       python-webob
-Requires:       python-netaddr
-Requires:       pytz
+Requires:       python2-netaddr
+Requires:       python2-pytz
 
 %description -n python2-%{lpypi_name}
 Web Services Made Easy, simplifies the implementation of
