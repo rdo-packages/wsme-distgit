@@ -1,8 +1,7 @@
 # Created by pyp2rpm-1.0.1
 
-# WSME does not have proper py3 support, so disabling for now
 %if 0%{?fedora}
-%global with_python3 0
+%global with_python3 1
 %else
 %{!?python_sitelib: %global python_sitelib %(%{__python} -c "from distutils.sysconfig import get_python_lib; print (get_python_lib())")}
 %endif
@@ -98,9 +97,13 @@ manipulate the request and the response objects.
 
 %check
 %{__python2} setup.py test
-%if 0%{?with_python3}
-%{__python3} setup.py test
-%endif
+# FIXME(ykarel) Disable tests with python3, as upstream has upperbound for sqlalchemy
+# set to 0.7.99, while we have > 1.2.5, in centos we are not hitting this currently
+# because tests are not running(because setuptools is 22.0.5), after updating it
+# we will hit in centos as well.
+#%if 0%{?with_python3}
+#%{__python3} setup.py test
+#%endif
 
 %files -n python2-%{lpypi_name}
 %doc README.rst examples/
