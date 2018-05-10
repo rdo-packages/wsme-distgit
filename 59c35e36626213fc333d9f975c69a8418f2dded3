@@ -46,6 +46,30 @@
       "revId": "59c35e36626213fc333d9f975c69a8418f2dded3",
       "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab921fb_7eb0098c",
+        "filename": "python-wsme.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 113
+      },
+      "writtenOn": "2018-05-10T14:44:26Z",
+      "side": 1,
+      "message": "It\u0027s failing for Fedora anyway, so we\u0027d better disable it (otherwise it won\u0027t build there)",
+      "parentUuid": "bab921fb_beb5817f",
+      "range": {
+        "startLine": 99,
+        "startChar": 22,
+        "endLine": 99,
+        "endChar": 26
+      },
+      "revId": "59c35e36626213fc333d9f975c69a8418f2dded3",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
     }
   ]
 }
