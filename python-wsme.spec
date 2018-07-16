@@ -13,7 +13,7 @@
 %global lpypi_name wsme
 
 Name:           python-%{lpypi_name}
-Version:        0.9.2
+Version:        0.9.3
 Release:        1%{?dist}
 Summary:        Web Services Made Easy
 
@@ -121,6 +121,9 @@ manipulate the request and the response objects.
 %endif
 
 %changelog
+* Sun Jul 15 2018 Jon Schlueter <jschluet@redhat.com> 0.9.3-1
+- Update to 0.9.3
+
 * Fri Aug 25 2017 Alfredo Moralejo <amoralej@redhat.com> 0.9.2-1
 - Update to 0.9.2
 
