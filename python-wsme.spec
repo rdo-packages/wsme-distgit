@@ -23,7 +23,7 @@ Summary:        Web Services Made Easy
 
 License:        MIT
 URL:            https://pypi.python.org/pypi/WSME
-Source0:        http://pypi.python.org/packages/source/W/%{pypi_name}/%{pypi_name}-%{version}.tar.gz
+Source0:        https://pypi.python.org/packages/source/W/%{pypi_name}/%{pypi_name}-%{version}.tar.gz
 BuildArch:      noarch
 
 %description
