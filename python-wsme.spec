@@ -1,5 +1,3 @@
-# Created by pyp2rpm-1.0.1
-
 %if 0%{?fedora}
 %global with_python3 1
 # FIXME(ykarel) Disable tests in fedora as upstream has upperbound for sqlalchemy
@@ -17,8 +15,8 @@
 %global lpypi_name wsme
 
 Name:           python-%{lpypi_name}
-Version:        XXX
-Release:        XXX
+Version:        0.9.3
+Release:        1%{?dist}
 Summary:        Web Services Made Easy
 
 License:        MIT
@@ -127,3 +125,5 @@ manipulate the request and the response objects.
 %endif
 
 %changelog
+* Sun Jul 15 2018 Jon Schlueter <jschluet@redhat.com> 0.9.3-1
+- Update to 0.9.3
