@@ -9,7 +9,6 @@
 %global pyver_install %py%{pyver}_install
 %global pyver_build %py%{pyver}_build
 # End of macros for py2/py3 compatibility
-# Created by pyp2rpm-1.0.1
 
 # FIXME(ykarel) Disable tests in fedora as upstream has upperbound for sqlalchemy
 # set to 0.7.99, while we have > 1.2.5, in centos we are not hitting this currently
@@ -23,8 +22,8 @@
 %global lpypi_name wsme
 
 Name:           python-%{lpypi_name}
-Version:        XXX
-Release:        XXX
+Version:        0.9.3
+Release:        1%{?dist}
 Summary:        Web Services Made Easy
 
 License:        MIT
@@ -99,3 +98,5 @@ manipulate the request and the response objects.
 %{pyver_sitelib}/*.pth
 
 %changelog
+* Sun Jul 15 2018 Jon Schlueter <jschluet@redhat.com> 0.9.3-1
+- Update to 0.9.3
