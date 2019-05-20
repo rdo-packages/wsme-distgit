@@ -1,5 +1,3 @@
-# Created by pyp2rpm-1.0.1
-
 # WSME does not have proper py3 support, so disabling for now
 %if 0%{?fedora}
 %global with_python3 0
