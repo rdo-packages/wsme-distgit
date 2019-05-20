@@ -1,5 +1,3 @@
-# Created by pyp2rpm-1.0.1
-
 %if 0%{?fedora}
 %global with_python3 1
 # FIXME(ykarel) Disable tests in fedora as upstream has upperbound for sqlalchemy
