@@ -5,9 +5,9 @@
 %global pyver 2
 %endif
 %global pyver_bin python%{pyver}
-%global pyver_sitelib %python%{pyver}_sitelib
-%global pyver_install %py%{pyver}_install
-%global pyver_build %py%{pyver}_build
+%global pyver_sitelib %{expand:%{python%{pyver}_sitelib}}
+%global pyver_install %{expand:%{py%{pyver}_install}}
+%global pyver_build %{expand:%{py%{pyver}_build}}
 # End of macros for py2/py3 compatibility
 
 # FIXME(ykarel) Disable tests in fedora as upstream has upperbound for sqlalchemy
@@ -22,8 +22,8 @@
 %global lpypi_name wsme
 
 Name:           python-%{lpypi_name}
-Version:        XXX
-Release:        XXX
+Version:        0.9.3
+Release:        1%{?dist}
 Summary:        Web Services Made Easy
 
 License:        MIT
@@ -98,3 +98,5 @@ manipulate the request and the response objects.
 %{pyver_sitelib}/*.pth
 
 %changelog
+* Sun Jul 15 2018 Jon Schlueter <jschluet@redhat.com> 0.9.3-1
+- Update to 0.9.3
