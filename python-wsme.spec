@@ -1,14 +1,3 @@
-# Macros for py2/py3 compatibility
-%if 0%{?fedora} || 0%{?rhel} > 7
-%global pyver %{python3_pkgversion}
-%else
-%global pyver 2
-%endif
-%global pyver_bin python%{pyver}
-%global pyver_sitelib %python%{pyver}_sitelib
-%global pyver_install %py%{pyver}_install
-%global pyver_build %py%{pyver}_build
-# End of macros for py2/py3 compatibility
 
 # FIXME(ykarel) Disable tests in fedora as upstream has upperbound for sqlalchemy
 # set to 0.7.99, while we have > 1.2.5, in centos we are not hitting this currently
@@ -37,39 +26,28 @@ multiple protocol REST web services by providing simple yet
 powerful typing which removes the need to directly
 manipulate the request and the response objects.
 
-%package -n python%{pyver}-%{lpypi_name}
+%package -n python3-%{lpypi_name}
 Summary:        Web Services Made Easy
 %{?python_provide:%python_provide python2-%{lpypi_name}}
 
-BuildRequires:  python%{pyver}-devel
-BuildRequires:  python%{pyver}-setuptools
-BuildRequires:  python%{pyver}-pbr
-BuildRequires:  python%{pyver}-six
-BuildRequires:  python%{pyver}-webob
-BuildRequires:  python%{pyver}-netaddr
-BuildRequires:  python%{pyver}-pytz
+BuildRequires:  python3-devel
+BuildRequires:  python3-setuptools
+BuildRequires:  python3-pbr
+BuildRequires:  python3-six
+BuildRequires:  python3-webob
+BuildRequires:  python3-netaddr
+BuildRequires:  python3-pytz
 
-# Handle python2 exception
-%if %{pyver} == 2
-BuildRequires:  python-webtest
-BuildRequires:  python-simplegeneric
-%else
-BuildRequires:  python%{pyver}-webtest
-BuildRequires:  python%{pyver}-simplegeneric
-%endif
+BuildRequires:  python3-webtest
+BuildRequires:  python3-simplegeneric
 
-Requires:       python%{pyver}-six
-Requires:       python%{pyver}-webob
-Requires:       python%{pyver}-netaddr
-Requires:       python%{pyver}-pytz
-# Handle python2 exception
-%if %{pyver} == 2
-Requires:       python-simplegeneric
-%else
-Requires:       python%{pyver}-simplegeneric
-%endif
+Requires:       python3-six
+Requires:       python3-webob
+Requires:       python3-netaddr
+Requires:       python3-pytz
+Requires:       python3-simplegeneric
 
-%description -n python%{pyver}-%{lpypi_name}
+%description -n python3-%{lpypi_name}
 Web Services Made Easy, simplifies the implementation of
 multiple protocol REST web services by providing simple yet
 powerful typing which removes the need to directly
@@ -79,22 +57,22 @@ manipulate the request and the response objects.
 %setup -q -n %{pypi_name}-%{upstream_version}
 
 %build
-%{pyver_build}
+%{py3_build}
 
 %install
-%{pyver_install}
+%{py3_install}
 
 %if 0%{?with_tests}
 %check
-%{pyver_bin} setup.py test
+python3 setup.py test
 %endif
 
-%files -n python%{pyver}-%{lpypi_name}
+%files -n python3-%{lpypi_name}
 %doc README.rst examples/
 %license LICENSE
-%{pyver_sitelib}/wsme
-%{pyver_sitelib}/wsmeext
-%{pyver_sitelib}/*.egg-info
-%{pyver_sitelib}/*.pth
+%{python3_sitelib}/wsme
+%{python3_sitelib}/wsmeext
+%{python3_sitelib}/*.egg-info
+%{python3_sitelib}/*.pth
 
 %changelog
