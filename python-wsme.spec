@@ -1,3 +1,5 @@
+%{!?sources_gpg: %{!?dlrn:%global sources_gpg 1} }
+%global sources_gpg_sign 0x2426b928085a020d8a90d0d879ab7008d0896c8a
 
 # FIXME(ykarel) Disable tests in fedora as upstream has upperbound for sqlalchemy
 # set to 0.7.99, while we have > 1.2.5, in centos we are not hitting this currently
@@ -18,7 +20,18 @@ Summary:        Web Services Made Easy
 License:        MIT
 URL:            https://pypi.python.org/pypi/WSME
 Source0:        https://pypi.python.org/packages/source/W/%{pypi_name}/%{pypi_name}-%{version}.tar.gz
+# Required for tarball sources verification
+%if 0%{?sources_gpg} == 1
+Source101:        https://pypi.python.org/packages/source/W/%{pypi_name}/%{pypi_name}-%{version}.tar.gz.asc
+Source102:        https://releases.openstack.org/_static/%{sources_gpg_sign}.txt
+%endif
 BuildArch:      noarch
+
+# Required for tarball sources verification
+%if 0%{?sources_gpg} == 1
+BuildRequires:  /usr/bin/gpgv2
+BuildRequires:  openstack-macros
+%endif
 
 %description
 Web Services Made Easy, simplifies the implementation of
@@ -54,6 +67,10 @@ powerful typing which removes the need to directly
 manipulate the request and the response objects.
 
 %prep
+# Required for tarball sources verification
+%if 0%{?sources_gpg} == 1
+%{gpgverify}  --keyring=%{SOURCE102} --signature=%{SOURCE101} --data=%{SOURCE0}
+%endif
 %setup -q -n %{pypi_name}-%{upstream_version}
 
 %build
