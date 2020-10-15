@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ca1295a3_ea9eb65c",
+        "filename": "python-wsme.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 403
+      },
+      "writtenOn": "2020-10-15T14:06:36Z",
+      "side": 1,
+      "message": "this doesn\u0027t seem to exist for pypi url?",
+      "revId": "8c7b84d2ffbb922e91b7928c3dd63bb470469435",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
