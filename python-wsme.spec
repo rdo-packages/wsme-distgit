@@ -11,8 +11,8 @@
 %global lpypi_name wsme
 
 Name:           python-%{lpypi_name}
-Version:        XXX
-Release:        XXX
+Version:        0.10.1
+Release:        1%{?dist}
 Summary:        Web Services Made Easy
 
 License:        MIT
@@ -76,3 +76,6 @@ python3 setup.py test
 %{python3_sitelib}/*.pth
 
 %changelog
+* Mon Dec 20 2021 RDO <dev@lists.rdoproject.org> 0.10.1-1
+- Update to 0.10.1
+
