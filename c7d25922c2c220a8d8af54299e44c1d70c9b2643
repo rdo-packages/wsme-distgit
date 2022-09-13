@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9a318d12_74d171d8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 635
+      },
+      "writtenOn": "2022-09-13T11:02:11Z",
+      "side": 1,
+      "message": "zed-uc is 0.10.1, we can crosstag it manually",
+      "revId": "c7d25922c2c220a8d8af54299e44c1d70c9b2643",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
+    }
+  ]
+}
