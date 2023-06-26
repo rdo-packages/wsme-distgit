@@ -6,6 +6,8 @@
 %global with_tests 0
 
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
+# we are excluding some BRs from automatic generator
+%global excluded_brs doc8 bandit pre-commit hacking flake8-import-order transaction
 
 %global pypi_name WSME
 %global lpypi_name wsme
@@ -28,25 +30,9 @@ manipulate the request and the response objects.
 
 %package -n python3-%{lpypi_name}
 Summary:        Web Services Made Easy
-%{?python_provide:%python_provide python2-%{lpypi_name}}
 
 BuildRequires:  python3-devel
-BuildRequires:  python3-setuptools
-BuildRequires:  python3-pbr
-BuildRequires:  python3-six
-BuildRequires:  python3-webob
-BuildRequires:  python3-netaddr
-BuildRequires:  python3-pytz
-
-BuildRequires:  python3-webtest
-BuildRequires:  python3-simplegeneric
-
-Requires:       python3-six
-Requires:       python3-webob
-Requires:       python3-netaddr
-Requires:       python3-pytz
-Requires:       python3-simplegeneric
-
+BuildRequires:  pyproject-rpm-macros
 %description -n python3-%{lpypi_name}
 Web Services Made Easy, simplifies the implementation of
 multiple protocol REST web services by providing simple yet
@@ -56,15 +42,32 @@ manipulate the request and the response objects.
 %prep
 %setup -q -n %{pypi_name}-%{upstream_version}
 
+sed -i /^[[:space:]]*-c{env:.*_CONSTRAINTS_FILE.*/d tox.ini
+sed -i "s/^deps = -c{env:.*_CONSTRAINTS_FILE.*/deps =/" tox.ini
+sed -i /^minversion.*/d tox.ini
+sed -i /^requires.*virtualenv.*/d tox.ini
+
+# Exclude some bad-known BRs
+for pkg in %{excluded_brs};do
+  for reqfile in doc/requirements.txt test-requirements.txt; do
+    if [ -f $reqfile ]; then
+      sed -i /^${pkg}.*/d $reqfile
+    fi
+  done
+done
+
+%generate_buildrequires
+%pyproject_buildrequires -t -e %{default_toxenv}
+
 %build
-%{py3_build}
+%pyproject_wheel
 
 %install
-%{py3_install}
+%pyproject_install
 
 %if 0%{?with_tests}
 %check
-python3 setup.py test
+%tox -e %{default_toxenv}
 %endif
 
 %files -n python3-%{lpypi_name}
@@ -72,7 +75,7 @@ python3 setup.py test
 %license LICENSE
 %{python3_sitelib}/wsme
 %{python3_sitelib}/wsmeext
-%{python3_sitelib}/*.egg-info
+%{python3_sitelib}/*.dist-info
 %{python3_sitelib}/*.pth
 
 %changelog
