@@ -48,6 +48,30 @@
       "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "40b6b02b_900245f7",
+        "filename": "python-wsme.spec",
+        "patchSetId": 2
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 635
+      },
+      "writtenOn": "2023-06-28T14:43:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5ac0eda3_1e301716",
+      "range": {
+        "startLine": 6,
+        "startChar": 0,
+        "endLine": 6,
+        "endChar": 6
+      },
+      "revId": "da45ef02fc8c132cef4b468c6a2a0c40e3c455c6",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7eba1e7a_7cad4b0b",
@@ -85,6 +109,30 @@
       "side": 1,
       "message": "I don\u0027t see openstackdocstheme in build deps, let\u0027s remove sphinx only to check",
       "parentUuid": "7eba1e7a_7cad4b0b",
+      "range": {
+        "startLine": 10,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 22
+      },
+      "revId": "da45ef02fc8c132cef4b468c6a2a0c40e3c455c6",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "48d5d9bb_4759460b",
+        "filename": "python-wsme.spec",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 635
+      },
+      "writtenOn": "2023-06-28T14:43:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "af1905b3_dd200cf7",
       "range": {
         "startLine": 10,
         "startChar": 0,
