@@ -13,8 +13,8 @@
 %global lpypi_name wsme
 
 Name:           python-%{lpypi_name}
-Version:        XXX
-Release:        XXX
+Version:        0.12.1
+Release:        1%{?dist}
 Summary:        Web Services Made Easy
 
 License:        MIT
@@ -93,3 +93,6 @@ sed -i 's/^ *pytest.*/& {posargs}/g' tox.ini
 %{python3_sitelib}/*.pth
 
 %changelog
+* Mon Sep 25 2023 RDO <dev@lists.rdoproject.org> 0.12.1-1
+- Update to 0.12.1
+
