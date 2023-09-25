@@ -75,7 +75,13 @@ done
 %check
 # test_default_transaction is importing transaction module which is 
 # not yet packaged, so we need to ignore it for now.
+# TODO(amoralej) remove following condition once we finish the switch to 0.12.1
+%if %{lua:print(rpm.vercmp(rpm.expand("%{version}"), '0.12.1'));} < 0
 %tox -e %{default_toxenv} -- -- -e 'test_default_transaction'
+%else
+sed -i 's/^ *pytest.*/& {posargs}/g' tox.ini
+%tox -e %{default_toxenv} -- -- -k 'not test_default_transaction'
+%endif
 %endif
 
 %files -n python3-%{lpypi_name}
